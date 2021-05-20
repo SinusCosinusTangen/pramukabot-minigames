@@ -1,11 +1,6 @@
-package com.mythden.mythdenbot.miniGames.Parser;
+package com.mythden.mythdenbot.parser;
 
-import static com.mythden.mythdenbot.miniGames.Parser.MiniGamesModuleLibrary.*;
-
-import com.mythden.mythdenbot.miniGames.core.Pertanyaan;
-import com.mythden.mythdenbot.miniGames.service.MiniGamesServiceImpl;
-import net.dv8tion.jda.api.entities.MessageEmbed;
-import org.springframework.beans.factory.annotation.Autowired;
+import static com.mythden.mythdenbot.parser.MiniGamesModuleLibrary.*;
 
 import java.util.ArrayList;
 import java.util.Map;

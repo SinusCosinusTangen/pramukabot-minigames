@@ -1,4 +1,4 @@
-package com.mythden.mythdenbot.miniGames.core;
+package com.mythden.mythdenbot.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

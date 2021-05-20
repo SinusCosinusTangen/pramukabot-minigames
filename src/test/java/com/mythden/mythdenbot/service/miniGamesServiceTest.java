@@ -1,9 +1,9 @@
-package com.mythden.mythdenbot.miniGames.service;
+package com.mythden.mythdenbot.service;
 
-import com.mythden.mythdenbot.miniGames.core.Pemain;
-import com.mythden.mythdenbot.miniGames.core.Pertanyaan;
-import com.mythden.mythdenbot.miniGames.repository.MiniGamesRepository;
-import com.mythden.mythdenbot.miniGames.repository.PemainRepository;
+import com.mythden.mythdenbot.model.Pemain;
+import com.mythden.mythdenbot.model.Pertanyaan;
+import com.mythden.mythdenbot.repository.MiniGamesRepository;
+import com.mythden.mythdenbot.repository.PemainRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +14,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 

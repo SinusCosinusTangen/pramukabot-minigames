@@ -1,7 +1,6 @@
-package com.mythden.mythdenbot.miniGames.Parser;
+package com.mythden.mythdenbot.parser;
 
-import com.mythden.mythdenbot.miniGames.service.MiniGamesService;
-import com.mythden.mythdenbot.miniGames.service.MiniGamesServiceImpl;
+import com.mythden.mythdenbot.service.MiniGamesService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

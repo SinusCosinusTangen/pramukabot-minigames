@@ -1,4 +1,4 @@
-package com.mythden.mythdenbot.miniGames.Parser;
+package com.mythden.mythdenbot.parser;
 
 public class ReplyInt {
     private int ret = 0;

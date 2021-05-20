@@ -1,7 +1,4 @@
-package com.mythden.mythdenbot.miniGames.Parser;
-
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.MessageEmbed;
+package com.mythden.mythdenbot.parser;
 
 class Reply {
 

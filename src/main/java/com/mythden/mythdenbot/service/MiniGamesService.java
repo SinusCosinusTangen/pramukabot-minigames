@@ -1,7 +1,7 @@
-package com.mythden.mythdenbot.miniGames.service;
+package com.mythden.mythdenbot.service;
 
-import com.mythden.mythdenbot.miniGames.core.Pemain;
-import com.mythden.mythdenbot.miniGames.core.Pertanyaan;
+import com.mythden.mythdenbot.model.Pemain;
+import com.mythden.mythdenbot.model.Pertanyaan;
 
 import java.util.ArrayList;
 

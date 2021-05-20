@@ -1,9 +1,9 @@
-package com.mythden.mythdenbot.miniGames.core;
+package com.mythden.mythdenbot.core;
 
+import com.mythden.mythdenbot.model.Pemain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,7 +16,7 @@ public class PemainTest {
 
     @BeforeEach
     public void setup() throws Exception {
-        pemainClass = Class.forName("com.mythden.mythdenbot.miniGames.core.Pemain");
+        pemainClass = Class.forName("com.mythden.mythdenbot.core.Pemain");
 
     }
 

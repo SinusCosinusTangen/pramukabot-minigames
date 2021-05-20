@@ -1,6 +1,6 @@
-package com.mythden.mythdenbot.miniGames.repository;
+package com.mythden.mythdenbot.repository;
 
-import com.mythden.mythdenbot.miniGames.core.Pemain;
+import com.mythden.mythdenbot.model.Pemain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

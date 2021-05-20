@@ -1,9 +1,9 @@
-package com.mythden.mythdenbot.miniGames.service;
+package com.mythden.mythdenbot.service;
 
-import com.mythden.mythdenbot.miniGames.core.Pemain;
-import com.mythden.mythdenbot.miniGames.core.Pertanyaan;
-import com.mythden.mythdenbot.miniGames.repository.MiniGamesRepository;
-import com.mythden.mythdenbot.miniGames.repository.PemainRepository;
+import com.mythden.mythdenbot.model.Pemain;
+import com.mythden.mythdenbot.model.Pertanyaan;
+import com.mythden.mythdenbot.repository.MiniGamesRepository;
+import com.mythden.mythdenbot.repository.PemainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.mythden.mythdenbot.miniGames.Parser;
+package com.mythden.mythdenbot.parser;
 
 import java.util.ArrayList;
 import java.util.List;
