@@ -17,7 +17,7 @@ before_script:
 
 stages:
   - test
-  - deploy
+  - staging
 
 test:
   stage: test
@@ -32,18 +32,24 @@ cache:
     - $GRADLE_USER_HOME/wrapper
     - $GRADLE_USER_HOME/caches
 
-development:
-  image: ruby:2.4
+
+staging:
   stage: deploy
-  before_script:
-    - gem install dpl
-    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
-  script:
-    - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
-    - export HEROKU_API_KEY=$HEROKU_APIKEY
-    - heroku run --app $HEROKU_APPNAME migrate
-  environment:
-    name: development
-    url: $HEROKU_APP_HOST
-  only:
-    - master
+  trigger:
+    project: PramukaBot/PramukaBot
+    branch: mini-games
+#development:
+#  image: ruby:2.4
+#  stage: deploy
+#  before_script:
+#    - gem install dpl
+#    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+#  script:
+#    - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
+#    - export HEROKU_API_KEY=$HEROKU_APIKEY
+#    - heroku run --app $HEROKU_APPNAME migrate
+#  environment:
+#    name: development
+#    url: $HEROKU_APP_HOST
+#  only:
+#    - master
