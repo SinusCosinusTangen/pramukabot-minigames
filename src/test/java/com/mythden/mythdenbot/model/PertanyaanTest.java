@@ -1,6 +1,5 @@
-package com.mythden.mythdenbot.core;
+package com.mythden.mythdenbot.model;
 
-import com.mythden.mythdenbot.model.Pertanyaan;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class PertanyaanTest {
 
     @BeforeEach
     public void setup() throws Exception {
-        pertanyaanClass = Class.forName("com.mythden.mythdenbot.core.Pertanyaan");
+        pertanyaanClass = Class.forName("com.mythden.mythdenbot.model.Pertanyaan");
     }
 
     @Test
