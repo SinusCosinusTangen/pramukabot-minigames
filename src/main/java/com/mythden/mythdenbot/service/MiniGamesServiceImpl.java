@@ -30,7 +30,7 @@ public class MiniGamesServiceImpl implements MiniGamesService {
 
     @Override
     public void createPertanyaan() {
-        if (miniGamesRepository.existsById(1)) {
+        if (!miniGamesRepository.existsById(1)) {
             miniGamesRepository.save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
                     "Dasa Dharma"));
             miniGamesRepository.save(new Pertanyaan("Kenapa tunas kelapa dipilih sebagai " +

@@ -44,8 +44,10 @@ public class miniGamesServiceTest {
     @Test
     public void testCreatePertanyaan() {
         miniGamesService.createPertanyaan();
-        verify(miniGamesRepository).save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
-                "Dasa Dharma"));
+        if (!miniGamesRepository.existsById(1)) {
+            verify(miniGamesRepository).save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
+                    "Dasa Dharma"));
+        }
     }
 
     @Test
