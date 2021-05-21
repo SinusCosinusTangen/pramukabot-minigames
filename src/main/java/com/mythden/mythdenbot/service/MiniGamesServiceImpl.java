@@ -30,32 +30,34 @@ public class MiniGamesServiceImpl implements MiniGamesService {
 
     @Override
     public void createPertanyaan() {
-        miniGamesRepository.save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
-                "Dasa Dharma"));
-        miniGamesRepository.save(new Pertanyaan("Kenapa tunas kelapa dipilih sebagai " +
-                "lambang dari pramuka?", "Serbaguna"));
-        miniGamesRepository.save(new Pertanyaan("Bunyi dari Dasa Dharma ke-5 adalah",
-                "Rela menolong dan tabah"));
-        miniGamesRepository.save(new Pertanyaan("Tingkat pramuka untuk umur 7-10 tahun disebut dengan pramuka?",
-                "siaga"));
-        miniGamesRepository.save(new Pertanyaan("Tingkat pramuka untuk umur 11-15 tahun disebut dengan pramuka?",
-                "penegak"));
-        miniGamesRepository.save(new Pertanyaan("Tingkat pramuka untuk umur 16-20 tahun disebut dengan pramuka?",
-                "pandega"));
-        miniGamesRepository.save(new Pertanyaan("Sandi yang menggunakan bendera sebagai kode bernama?",
-                "semapur"));
-        miniGamesRepository.save(new Pertanyaan("Sandi yang menggunakan titik dan garis sebagai kode bernama?",
-                "morse"));
-        miniGamesRepository.save(new Pertanyaan("Siapakah bapak Pramuka Indonesia?",
-                "Sri Sultan Hamengkubuwono IX"));
-        miniGamesRepository.save(new Pertanyaan("Hari pramuka jatuh pada tanggal?",
-                "14 Agustus"));
-        miniGamesRepository.save(new Pertanyaan("Apa arti dari sandi morse ini: .--. .-. .- -- ..- -.- .-",
-                "PRAMUKA"));
-        miniGamesRepository.save(new Pertanyaan("Apa arti dari sandi morse ini: - ..- -. .- ... -.- . .-.. .- .--. .-",
-                "TUNAS KELAPA"));
+        if (miniGamesRepository.existsById(1)) {
+            miniGamesRepository.save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
+                    "Dasa Dharma"));
+            miniGamesRepository.save(new Pertanyaan("Kenapa tunas kelapa dipilih sebagai " +
+                    "lambang dari pramuka?", "Serbaguna"));
+            miniGamesRepository.save(new Pertanyaan("Bunyi dari Dasa Dharma ke-5 adalah",
+                    "Rela menolong dan tabah"));
+            miniGamesRepository.save(new Pertanyaan("Tingkat pramuka untuk umur 7-10 tahun disebut dengan pramuka?",
+                    "siaga"));
+            miniGamesRepository.save(new Pertanyaan("Tingkat pramuka untuk umur 11-15 tahun disebut dengan pramuka?",
+                    "penegak"));
+            miniGamesRepository.save(new Pertanyaan("Tingkat pramuka untuk umur 16-20 tahun disebut dengan pramuka?",
+                    "pandega"));
+            miniGamesRepository.save(new Pertanyaan("Sandi yang menggunakan bendera sebagai kode bernama?",
+                    "semapur"));
+            miniGamesRepository.save(new Pertanyaan("Sandi yang menggunakan titik dan garis sebagai kode bernama?",
+                    "morse"));
+            miniGamesRepository.save(new Pertanyaan("Siapakah bapak Pramuka Indonesia?",
+                    "Sri Sultan Hamengkubuwono IX"));
+            miniGamesRepository.save(new Pertanyaan("Hari pramuka jatuh pada tanggal?",
+                    "14 Agustus"));
+            miniGamesRepository.save(new Pertanyaan("Apa arti dari sandi morse ini: .--. .-. .- -- ..- -.- .-",
+                    "PRAMUKA"));
+            miniGamesRepository.save(new Pertanyaan("Apa arti dari sandi morse ini: - ..- -. .- ... -.- . .-.. .- .--. .-",
+                    "TUNAS KELAPA"));
 //            morse;
 //            alat-alat pramuka;
+        }
     }
 
     @Override
