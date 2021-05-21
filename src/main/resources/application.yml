@@ -1,0 +1,6 @@
+discord:
+  token: "ODM0Mzk3NDY3NDQ0NjQxNzky.YIATMg.26rdw7TcQ2ZibolfM96D_MOEG7s"
+  owner_id: "431868590786871296"
+
+server:
+  port: 5050
