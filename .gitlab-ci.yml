@@ -25,6 +25,16 @@ test:
     - gradle :check
     - gradle :jacocoTestReport
     - cat build/reports/jacoco/test/html/index.html
+  services:
+    - "postgres:latest"
+  variables:
+    DATABASE_URL: jdbc:postgresql://postgres:5432/postgres
+    POSTGRES_USER: postgres
+    POSTGRES_DB: postgres
+    POSTGRES_PASSWORD: postgres
+    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+    SPRING_DATASOURCE_USER: postgres
+    SPRING_DATASOURCE_PASSWORD: postgres
 
 cache:
   key: "$CI_COMMIT_REF_NAME"
@@ -32,24 +42,18 @@ cache:
     - $GRADLE_USER_HOME/wrapper
     - $GRADLE_USER_HOME/caches
 
-
-staging:
+development:
+  image: ruby:2.4
   stage: deploy
-  trigger:
-    project: PramukaBot/PramukaBot
-    branch: mini-games
-#development:
-#  image: ruby:2.4
-#  stage: deploy
-#  before_script:
-#    - gem install dpl
-#    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
-#  script:
-#    - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
-#    - export HEROKU_API_KEY=$HEROKU_APIKEY
-#    - heroku run --app $HEROKU_APPNAME migrate
-#  environment:
-#    name: development
-#    url: $HEROKU_APP_HOST
-#  only:
-#    - master
+  before_script:
+    - gem install dpl
+    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
+    - export HEROKU_API_KEY=$HEROKU_APIKEY
+    - heroku run --app $HEROKU_APPNAME migrate
+  environment:
+    name: development
+    url: $HEROKU_APP_HOST
+  only:
+    - master

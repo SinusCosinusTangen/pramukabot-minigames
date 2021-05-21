@@ -7,15 +7,15 @@ import java.util.ArrayList;
 
 public interface MiniGamesService {
 
-    String createPertanyaan();
+    void createPertanyaan();
     Iterable<Pertanyaan> getAllPertanyaan();
     Iterable<Pemain> getAllPemain();
-    String getPertanyaan();
+    Pertanyaan getPertanyaan();
     String jawab(String jawaban, String pemain);
     String addPemain(String pemain);
-    ArrayList<String> getPemain();
+    ArrayList<Pemain> getPemain();
     int getJumlahPemain();
     ArrayList<String> getSkor();
-    String end();
-    String getPertanyaanKini();
+    void end();
+    Pertanyaan getPertanyaanKini();
 }

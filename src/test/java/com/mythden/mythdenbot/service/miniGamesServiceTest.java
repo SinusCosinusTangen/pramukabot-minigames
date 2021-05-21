@@ -14,8 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class miniGamesServiceTest {
@@ -43,9 +42,10 @@ public class miniGamesServiceTest {
     }
 
     @Test
-    public void testServiceCreatePertanyaan(){
-        String create = miniGamesService.createPertanyaan();
-        assertEquals("Create", create);
+    public void testCreatePertanyaan() {
+        miniGamesService.createPertanyaan();
+        verify(miniGamesRepository).save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
+                "Dasa Dharma"));
     }
 
     @Test
@@ -72,7 +72,7 @@ public class miniGamesServiceTest {
         ));
         when(miniGamesRepository.findById(1)).thenReturn(pertanyaan1);
 
-        String pertanyaan = miniGamesService.getPertanyaan();
+        String pertanyaan = miniGamesService.getPertanyaan().getPertanyaan();
         assertEquals("pertanyaan1", pertanyaan);
     }
 
@@ -84,8 +84,8 @@ public class miniGamesServiceTest {
         when(miniGamesRepository.findById(1)).thenReturn(pertanyaan1);
 
         miniGamesService.getPertanyaan();
-        String pertanyaan = miniGamesService.getPertanyaan();
-        assertEquals("end", pertanyaan);
+        String pertanyaan = miniGamesService.getPertanyaan().getPertanyaan();
+        assertEquals("Permainan sudah berakhir", pertanyaan);
     }
 
     @Test
@@ -98,8 +98,8 @@ public class miniGamesServiceTest {
         when(miniGamesRepository.findById(2)).thenReturn(pertanyaan2);
 
         ArrayList<String> pertanyaanList = new ArrayList<>();
-        String pertanyaan1 = miniGamesService.getPertanyaan();
-        String pertanyaan2 = miniGamesService.getPertanyaan();
+        String pertanyaan1 = miniGamesService.getPertanyaan().getPertanyaan();
+        String pertanyaan2 = miniGamesService.getPertanyaan().getPertanyaan();
         pertanyaanList.add(pertanyaan1);
         pertanyaanList.add(pertanyaan2);
 
@@ -171,7 +171,7 @@ public class miniGamesServiceTest {
         when(miniGamesRepository.findById(1)).thenReturn(pertanyaan1);
 
         miniGamesService.getPertanyaan();
-        String pertanyaan = miniGamesService.getPertanyaanKini();
+        String pertanyaan = miniGamesService.getPertanyaanKini().getPertanyaan();
         assertEquals("pertanyaan1", pertanyaan);
     }
 
@@ -206,7 +206,10 @@ public class miniGamesServiceTest {
         lenient().when(pemainRepository.findByPemain("pemain1")).thenReturn(pemain1);
         lenient().when(pemainRepository.findByPemain("pemain2")).thenReturn(pemain2);
 
-        ArrayList<String> pemainList = miniGamesService.getPemain();
+        ArrayList<String> pemainList = new ArrayList<>();
+        for (Pemain pemain:miniGamesService.getPemain()) {
+            pemainList.add(pemain.getPemain());
+        }
         ArrayList<String> expectedOutput = new ArrayList<>();
         expectedOutput.add(pemain1.getPemain());
         expectedOutput.add(pemain2.getPemain());
@@ -240,11 +243,5 @@ public class miniGamesServiceTest {
         expectedOutput.add(pemain1.getPemain() + ": " + pemain1.getSkor());
         expectedOutput.add(pemain2.getPemain() + ": " + pemain2.getSkor());
         assertEquals(expectedOutput, pemainList);
-    }
-
-    @Test
-    public void endTest() {
-        String result = miniGamesService.end();
-        assertEquals("Permainan berakhir!", result);
     }
 }

@@ -5,10 +5,6 @@ plugins {
     id 'jacoco'
 }
 
-jacoco {
-    toolVersion = "0.8.6"
-}
-
 group = 'mythden'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -27,7 +23,6 @@ repositories {
 }
 
 dependencies {
-
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -77,18 +72,6 @@ task fatJar(type: Jar) {
     with jar
 }
 
-
-
-//jacocoTestReport {
-//    dependsOn test
-//    reports {
-//        xml.enabled true
-//        html.enabled true
-//        xml.destination file("${buildDir}/jacoco/jacoco.xml")
-//        html.destination file("${buildDir}/reports/jacoco/test/html")
-//    }
-//}
-//
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
