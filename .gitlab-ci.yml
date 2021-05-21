@@ -25,16 +25,6 @@ test:
     - gradle :check
     - gradle :jacocoTestReport
     - cat build/reports/jacoco/test/html/index.html
-  services:
-    - "postgres:latest"
-  variables:
-    DATABASE_URL: jdbc:postgresql://postgres:5432/postgres
-    POSTGRES_USER: postgres
-    POSTGRES_DB: postgres
-    POSTGRES_PASSWORD: postgres
-    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
-    SPRING_DATASOURCE_USER: postgres
-    SPRING_DATASOURCE_PASSWORD: postgres
 
 cache:
   key: "$CI_COMMIT_REF_NAME"
