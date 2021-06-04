@@ -85,10 +85,8 @@ public class MiniGamesServiceImpl implements MiniGamesService {
             return miniGamesRepository.findById(randomNum);
         } else if (idPertanyaanSudahKeluar.size() == max) {
             return new Pertanyaan("Permainan sudah berakhir", "");
-        } else if (idPertanyaanSudahKeluar.contains(randomNum)) {
-            return getPertanyaan();
         }
-        return new Pertanyaan("test", "test");
+        return getPertanyaan();
     }
 
     @Override

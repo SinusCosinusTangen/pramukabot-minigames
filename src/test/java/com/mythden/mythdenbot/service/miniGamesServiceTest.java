@@ -250,10 +250,7 @@ public class miniGamesServiceTest {
 
     @Test
     public void testEnd() throws Exception {
-        MiniGamesServiceImpl miniGamesService1 = mock(MiniGamesServiceImpl.class);
-        doNothing().when(miniGamesService1).end();
-        miniGamesService1.end();
-
-        verify(miniGamesService1, times(1)).end();
+        miniGamesService.end();
+        verify(pemainRepository, times(1)).deleteAll();
     }
 }
