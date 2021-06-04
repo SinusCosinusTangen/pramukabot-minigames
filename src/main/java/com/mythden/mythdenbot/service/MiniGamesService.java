@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface MiniGamesService {
 
-    void createPertanyaan();
+//    void createPertanyaan();
     Iterable<Pertanyaan> getAllPertanyaan();
     Iterable<Pemain> getAllPemain();
     Pertanyaan getPertanyaan();
