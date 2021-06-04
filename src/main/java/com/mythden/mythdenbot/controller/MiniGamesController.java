@@ -14,16 +14,15 @@ public class MiniGamesController {
     @Autowired
     private MiniGamesService miniGamesService;
 
-    @GetMapping(path = "/init-bot-admin")
-    @ResponseBody
-    public void createQuestion() {
-        miniGamesService.createPertanyaan();
-    }
+//    @GetMapping(path = "/init-bot-admin")
+//    @ResponseBody
+//    public void createQuestion() {
+//        miniGamesService.createPertanyaan();
+//    }
 
     @GetMapping(path = "/get-question", produces = {"application/json"})
     @ResponseBody
     public ResponseEntity getQuestion() {
-        miniGamesService.createPertanyaan();
         return ResponseEntity.ok(miniGamesService.getPertanyaan());
     }
 

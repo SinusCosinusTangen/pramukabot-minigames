@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.lang.reflect.Field;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,14 +42,14 @@ public class miniGamesServiceTest {
         pemain2 = new Pemain("pemain2", 7);
     }
 
-    @Test
-    public void testCreatePertanyaan() {
-        miniGamesService.createPertanyaan();
-        if (!miniGamesRepository.existsById(1)) {
-            verify(miniGamesRepository).save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
-                    "Dasa Dharma"));
-        }
-    }
+//    @Test
+//    public void testCreatePertanyaan() {
+//        miniGamesService.createPertanyaan();
+//        if (!miniGamesRepository.existsById(1)) {
+//            verify(miniGamesRepository).save(new Pertanyaan("Sepuluh janji pramuka disebut dengan?",
+//                    "Dasa Dharma"));
+//        }
+//    }
 
     @Test
     public void findAllPertanyaanTest() {
@@ -245,5 +246,14 @@ public class miniGamesServiceTest {
         expectedOutput.add(pemain1.getPemain() + ": " + pemain1.getSkor());
         expectedOutput.add(pemain2.getPemain() + ": " + pemain2.getSkor());
         assertEquals(expectedOutput, pemainList);
+    }
+
+    @Test
+    public void testEnd() throws Exception {
+        MiniGamesServiceImpl miniGamesService1 = mock(MiniGamesServiceImpl.class);
+        doNothing().when(miniGamesService1).end();
+        miniGamesService1.end();
+
+        verify(miniGamesService1, times(1)).end();
     }
 }
